@@ -6,13 +6,13 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> Best Transfer Money </title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -47,13 +47,39 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" href="~/">Best Transfer Money</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
+                        <li class="nav-item">
+                            <asp:LinkButton runat="server" CssClass="nav-link btn-sm nav-link-custom"
+                                ID="linkManageUsersPage" Visible="false" Text="Manage Users" href="ManageUsersPage.aspx">
+                            </asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton runat="server" CssClass="nav-link btn-sm nav-link-custom"
+                                ID="linkManageOrdersPage" Visible="false" Text="Manage Orders" href="ManageOrdersPage.aspx">
+                            </asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton runat="server" CssClass="nav-link btn-sm nav-link-custom"
+                                ID="linkConvertPage" Visible="false" Text="Convert" href="ConvertPage.aspx">
+                            </asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton runat="server" CssClass="nav-link btn-sm nav-link-custom"
+                                ID="linkSignUp" Visible="false" Text="Sign Up" href="SignUpPage.aspx">
+                            </asp:LinkButton>
+                        </li>
                         <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <%--<li><a runat="server"><%:Session["Email"]%></a></li>--%>
+                        <li class="nav-item">
+                            <asp:Label ID="lblUser" runat="server" ForeColor="White" Font-Italic="True" Font-Bold="True"></asp:Label></li>
+                        &nbsp&nbsp&nbsp
+                        <li class="navbar-brand">
+                            &nbsp&nbsp&nbsp
+                            <asp:Button CssClass="btn btn-danger my-2 my-sm-0 btn-sm" ID="btnLogout" runat="server" Visible="false" Text="Log Out" OnClick="btnLogout_Click" Font-Bold="True" Font-Italic="True" /></li>
                     </ul>
                 </div>
             </div>
@@ -63,7 +89,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> Developed by Jadson Rafael</p>
             </footer>
         </div>
 
